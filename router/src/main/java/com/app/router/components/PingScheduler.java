@@ -22,7 +22,7 @@ public class PingScheduler {
 
     private Map<String, PingHistory> pingCache = new HashMap<>();
 
-    @Scheduled(fixedRate = 1000) // Ejecutar cada 30 minutos
+    @Scheduled(fixedRate = 30 * 60 * 1000) // Ejecutar cada 30 minutos
     public void performPing() {
         // Iterar sobre todos los dispositivos y realizar ping
         for (String ipAddress : getDeviceIPsFromDatabase()) {
